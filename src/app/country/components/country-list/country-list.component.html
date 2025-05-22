@@ -29,8 +29,37 @@
                     <span class="badge badge-info">{{ country.population | number }} </span>
                    </td>
                    <td>
-                    <a class="link-primary cursor-pointer" >Ver mas...</a>
+                    <a 
+                        [routerLink]="['/country/by', country.code]"
+                        class="link-primary cursor-pointer" >Ver mas...</a>
                    </td>
+                </tr>
+            }
+            @if (errorMessage()){
+                <tr>
+                    <td colspan="8">
+                        {{ errorMessage() }}
+                    </td>
+                </tr>
+            }
+
+            <!--  -->
+
+            @if(isLoading()){
+                  <tr>
+                    <td colspan="8">
+                       Cargando...
+                    </td>
+                </tr>
+            }
+
+            <!--  -->
+
+              @if(!isLoading() && countries()!.length === 0){
+                  <tr>
+                    <td colspan="8">
+                       No hay Resultado.
+                    </td>
                 </tr>
             }
         </tbody>

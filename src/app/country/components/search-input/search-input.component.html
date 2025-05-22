@@ -7,6 +7,8 @@
         #txtValue
         (keyup.enter)="value.emit(txtValue.value)"
         [placeholder]="placeholder()"
+        (keyup)="inputValue.set(txtValue.value)"
+        [value]="inputValue()"
         >
 
     <button 

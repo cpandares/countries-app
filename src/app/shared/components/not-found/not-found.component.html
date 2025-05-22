@@ -1,0 +1,19 @@
+<section class="flex flex-col items-center justify-center min-h-[60vh] bg-gray-500 rounded-lg shadow-md p-8">
+    <!-- Icono de advertencia SVG -->
+    <div class="mb-4">
+        <svg class="w-16 h-16 text-yellow-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 48 48">
+            <circle cx="24" cy="24" r="22" stroke="currentColor" stroke-width="3" fill="#FEF3C7"/>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M24 14v12m0 6h.01" />
+        </svg>
+    </div>
+    <h2 class="text-2xl font-bold text-gray-800 mb-2">No se encontró el país</h2>
+    <p class="text-gray-600 mb-6 text-center">Intenta buscar otro nombre o revisa la ortografía.</p>
+    <button class="flex items-center gap-2 px-5 py-2 btn btn-primary"
+            (click)="goBack()">
+        <!-- Icono de flecha SVG -->
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+        </svg>
+        Regresar
+    </button>
+</section>

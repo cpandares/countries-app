@@ -3,14 +3,18 @@
 
 <search-input 
     placeholder="Buscar Por Capital"
-    (value)="SearchValue($event)"
+    (value)="query.set($event)"
+    [initialValue]="query()"
     />
 
-@if (isError()) {
-    <h3>{{ isError() }}</h3>
+@if (countryResource.error()) {
+    <h3>{{ countryResource.error() }}</h3>
 }@else{
 
     <country-list
-        [countries]="countries()"
+        [countries]="countryResource.value()"
+        [errorMessage]="countryResource.error()"
+        [isLoading]="countryResource.isLoading()"
+        
         />
 }

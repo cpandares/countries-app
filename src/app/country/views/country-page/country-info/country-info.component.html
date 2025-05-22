@@ -1,0 +1,38 @@
+<section class="flex justify-center items-center min-h-[60vh]">
+    <div class="card w-full max-w-md bg-base-100 shadow-xl">
+        <figure class="px-10 pt-10">
+            <img [src]="country().flag" [alt]="country().name + ' flag'"
+                class="rounded-xl w-120 h-120" />
+        </figure>
+        <div class="card-body items-center text-center">
+            <div class="collapse collapse-plus bg-base-100 border border-base-300">
+                <input type="radio" name="my-accordion-3" checked="checked" />
+                <div class="collapse-title font-semibold">Capital?</div>
+                <div class="collapse-content text-sm">
+                    {{ country().capital }}
+                </div>
+            </div>
+            <div class="collapse collapse-plus bg-base-100 border border-base-300">
+                <input type="radio" name="my-accordion-3" />
+                <div class="collapse-title font-semibold">Numero de habitantes</div>
+                <div class="collapse-content text-sm">
+                    {{ country().population | number }}
+                </div>
+            </div>
+            <div class="collapse collapse-plus bg-base-100 border border-base-300">
+                <input type="radio" name="my-accordion-3" />
+                <div class="collapse-title font-semibold">
+                    Frontera con:
+                </div>
+                <div class="collapse-content text-sm">
+                    <ul class="list-disc list-inside">
+                        
+                        @for (border of country().borders; track $index) {
+                            <li>{{ border }}</li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
